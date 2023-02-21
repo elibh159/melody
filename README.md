@@ -17,16 +17,25 @@
 this App is a sample of a music site on which users could create their own playlist.
 
 # Agenda:
-1- After registering, the user needs to log in to the app
-2- A list of music can be found on the home page
-3- On the homepage, a search bar should be available to find music
-4- the user is able to create a new playlist
-5- Create a playlists page
-6- the user is able to change the playlist's label or cover image 
-7- the user could add or remove music from the playlist
-8- the user could delete the playlist
-9- the user is able to visit all music inside the playlist
-10- The user can download music from the playlist
+    1. After registering, the user needs to log in to the app
+
+    2. A list of music can be found on the home page
+
+    3. On the homepage, a search bar should be available to find music
+
+    4. the user is able to create a new playlist
+
+    5. Create a playlists page
+
+    6. the user is able to change the playlist's label or cover image 
+
+    7. the user could add or remove music from the playlist
+
+    8. the user could delete the playlist
+
+    9. the user is able to visit all music inside the playlist
+    
+    10. The user can download music from the playlist
 
 # Run
 
@@ -54,6 +63,8 @@ In this project I used **Group by feature or routes**. In this way all of file r
 These packages are installed in this project:
 
 - react-router-dom
+
+- react-query
 
 - sass
 
