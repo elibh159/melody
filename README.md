@@ -1,4 +1,4 @@
-# `Fundemental of project`
+# `Melody app`
 
 # Contents
 
