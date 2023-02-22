@@ -3,7 +3,7 @@
  * This represents some generic auth provider API, like Firebase.
  */
 
-import { loginApi } from '../api';
+import { loginApi } from '../services';
 
 const fakeAuthProvider = {
   isAuthenticated: false,

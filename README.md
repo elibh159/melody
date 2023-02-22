@@ -39,7 +39,11 @@ this App is a sample of a music site on which users could create their own playl
 
 # Run
 
-In the project directory, you can run:
+#### set API URL in the Local Environment Variables
+
+In the project directory, you should create a new `.env.local` and 
+add Server address for connection to backend, called `REACT_APP_APPLICATION_API_URL` then
+you can run:
 
 #### npm start
 
@@ -91,7 +95,7 @@ I use useContext for state management in this project.
 
 # Preview of the project
 
-This project have 2 pages:
+This project have 4 pages:
 
     - LOGIN
 

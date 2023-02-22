@@ -16,7 +16,7 @@ import {
   Spinner
 } from 'react-bootstrap';
 import { validationSchema } from "./validationSchema";
-import { registerApi } from '../../api';
+import { registerApi } from '../../services';
 import "./style/style.scss";
 
 const Register = () => {
