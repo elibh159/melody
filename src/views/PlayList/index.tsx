@@ -1,5 +1,2 @@
-import React from 'react';
-
-const PlayList =()=> <div>This is PlayList</div>;
-
+import PlayList from "../../components/playList";
 export default PlayList;

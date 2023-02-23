@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface SigninCallbacktype {
     username?: string;
     ok: boolean;

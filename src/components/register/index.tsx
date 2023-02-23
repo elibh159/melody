@@ -42,7 +42,7 @@ const Register = () => {
       });
     }
   }, [isSuccess]);
-  const submitHandler = () => {
+  const handleSubmit = () => {
     mutateRegister(
       {
         first_name: initValues.firstname,
@@ -73,7 +73,7 @@ const Register = () => {
         <Formik
           validationSchema={validationSchema}
           initialValues={initValues}
-          onSubmit={submitHandler}
+          onSubmit={handleSubmit}
           enableReinitialize
         >
           <Form>
