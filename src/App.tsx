@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Spinner from "./components/custom/Spinner";
 import AuthProvider from "./context/AuthContext";
 import "bootstrap/dist/css/bootstrap.min.css";

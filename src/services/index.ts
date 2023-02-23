@@ -44,3 +44,28 @@ export const registerApi = async (userinfo: RegisterType) => {
     }
 };
 
+//TODO: find type of SongParamsType and remove any
+export const songApi = async ({ queryKey, pageParam = 1 }: any) => {
+    try {
+        const search = queryKey[1];
+        const perPage = queryKey[2];
+        const params = {
+            'filter[title][like]': search,
+            'per-page': perPage,
+            page: pageParam
+        };
+
+        const axiosClient = getAxiosClient();
+        const response = await axiosClient.get('song', { params });
+        const data = response.data.result;
+        
+        return data;
+    } catch (e: any) {
+        if (e.response) {
+            const data = e.response.data;
+            throw new Error(data.result[0].message);
+        }
+        throw new Error(e.message);
+    }
+};
+

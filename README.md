@@ -11,6 +11,8 @@
     5. Packages
 
     6. Style
+
+    7. Debugge
     
 # Description
 
@@ -68,7 +70,9 @@ These packages are installed in this project:
 
 - react-router-dom
 
-- react-query
+- tanstack
+
+- react-intersection-observer
 
 - sass
 
@@ -88,6 +92,9 @@ These packages are installed in this project:
 
 - **Bootstrap**
 - **SASS**
+
+# Debugge
+I used  `Eslint` and `@tanstack/react-query-devtools` in the project. 
 
 # State management
 

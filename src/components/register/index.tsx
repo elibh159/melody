@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useMutation } from 'react-query';
+import { useMutation } from '@tanstack/react-query';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import { useAuth } from "../../context/AuthContext";
 import { AuthContextType, SigninCallbacktype } from "../../interface/authContextType";
