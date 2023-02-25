@@ -1,0 +1,14 @@
+@import "src/scss/variables";
+
+.cover {
+    .card {
+        background: $main-card-bg !important;
+        border: 1px solid $main-brown !important;
+
+        .card-header {
+            border-bottom: 1px solid $main-brown !important;
+            font-size: 20px !important;
+            color: $main-color-text !important;
+        }
+    }
+}

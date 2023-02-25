@@ -9,7 +9,7 @@ export const getAxiosClient = () => {
   const baseURL = getUrl();
   const axiosClient = axios.create({ baseURL });
   const authToken = getToken();
-
+  
   if (authToken === null || authToken === undefined) {
     axiosClient.defaults.headers.common.Authorization = null;
   } else {

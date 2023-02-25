@@ -44,7 +44,7 @@ const SongCard = (songInfo: SongCardType) => {
               <AddToPlayListModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
-               songId={songInfo.id}
+               songid={songInfo.id}
               />
             </div>
           </Card.Body>

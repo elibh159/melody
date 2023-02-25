@@ -1,22 +1,29 @@
 @import "src/scss/variables";
 
-.navbar{
-  .bg-dark{
+.navbar {
+  .bg-dark {
     background-color: $header-bg ;
   }
-  .navbar-brand{
+
+  .navbar-brand {
     font-size: $logo-size;
   }
-  .navbar-nav{
-    a{
+
+  .navbar-nav {
+    a {
       color: $header-color;
       text-decoration: none;
       padding: 0 1rem;
       font-size: 18px;
     }
+
+    a.active {
+      color: $main-yellow-dark;
+    }
   }
-  .navbar-text{
-    a{
+
+  .navbar-text {
+    a {
       color: $header-color;
       text-decoration: none;
       padding: 0 1rem;

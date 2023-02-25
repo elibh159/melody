@@ -3,6 +3,7 @@ import { fakeAuthProvider } from "./auth";
 import { AuthContextType } from "../interface/authContextType";
 import { setToken } from '../helpers/auth';
 
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 export const AuthContext = createContext<AuthContextType>(null!);
 export function useAuth() {
     return useContext(AuthContext);

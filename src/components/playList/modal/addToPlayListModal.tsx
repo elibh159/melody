@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import { AddToPlayListModalPropsType } from '../../../interface/playlistType';
 import PlayListTabs from './playListTabs';
 
-//TODO: SongID should be save in stateManagement
+//TODO: songid should be save in stateManagement
 const AddToPlayListModal = (props:AddToPlayListModalPropsType) => {
   return (
     <Modal
@@ -18,7 +18,7 @@ const AddToPlayListModal = (props:AddToPlayListModalPropsType) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <PlayListTabs songId={props.songId}/>
+        <PlayListTabs songid={props.songid}/>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>

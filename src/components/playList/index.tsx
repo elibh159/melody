@@ -1,56 +1,51 @@
 import React, { useEffect } from 'react';
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { addSongApi, deletePlaylistApi } from "../../services";
+import { addSongApi } from "../../services";
 import { PlayListType } from '../../interface/playlistType';
 import { Button, Spinner } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import DeletePlaylist from './deletePlaylist';
 
 
-const PlayList = ({ songId }: any = { songId: undefined }) => {
+const PlayList = ({ songid }: any = { songid: undefined }) => {
     const queryClient = useQueryClient();
     const data: any = queryClient.getQueryData(['playList']);
-    const { mutate: mutateAddSong, isLoading: isLoadingAddSong } = useMutation(addSongApi);//isError , data: dataAddSong, isSuccess: isSuccessAddSong
-    const { mutate: mutateDelete, isLoading: isLoadingDelete, data: dataDelete, isSuccess: isSuccessDelete } = useMutation(deletePlaylistApi);
-
+    const { mutate: mutateAddSong, isLoading: isLoadingAddSong, isSuccess: isSuccessAddSong, data: dataAddSong } = useMutation(addSongApi);//isError
+   
     const addSongToPlayList = (playlistId: number) => {
-        mutateAddSong({ songId, playlistId });
+        mutateAddSong({ songid, playlistId });
     }
 
-    const deletePlayList = (playlistId: number) => {
-        mutateDelete(playlistId);
-
-    }
-
+  
     useEffect(() => {
-        if (isSuccessDelete) {
-
+        if (isSuccessAddSong) {
             queryClient.setQueryData(['playList'], (oldData: any) => {
-                const items = oldData.items.filter((item: any) => item.id !== dataDelete.playlistId);
-                return { ...oldData, items };
+                const index = oldData.items.findIndex((item: any) => item.id === dataAddSong.id);
+                if (index != -1) {
+                    oldData.items[index].song = dataAddSong.songs;
+                }
+                return oldData;
             });
         }
-    }, [isSuccessDelete]);
-
-
+    }, [isSuccessAddSong]);
 
     return (
         <div>
+             {isLoadingAddSong && <Spinner />}
             <ul>
                 {data?.items.map(({ id, title, cover }: PlayListType) => (
                     <li key={id} className="d-flex flex-row align-items-center m-2 justify-content-between">
-                        <img src={cover} alt={title} width={50} height={50} ></img>
-                        <p className='p-1  '>{title}</p>
-                        {(isLoadingAddSong || isLoadingDelete) && <Spinner />}
-                        {songId &&
+                        <Link to={`/playList/${id}`} >
+                            <img src={cover} alt={title} width={50} height={50} ></img>
+                            <p className='p-1  '>{title}</p>
+                        </Link>
+                        {songid &&
                             <Button
                                 onClick={() => addSongToPlayList(id)}
                                 className="btn btn-success ms-auto m-1" >
                                 ➕ Add to playlist
                             </Button>}
-                        <Button
-                            onClick={() => deletePlayList(id)}
-                            className="btn btn-danger m-1">
-                            Delete playlist
-                        </Button>
+                        <DeletePlaylist playlistId={id} />
                     </li>
                 ))}
             </ul>

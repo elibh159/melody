@@ -1,9 +1,10 @@
 import { getAxiosClient } from "../helpers/api";
 import { RegisterType, LoginType } from "../interface/userType";
-const axiosClient = getAxiosClient();
+
 
 export const loginApi = async (loginInfo: LoginType) => {
     try {
+        const axiosClient = getAxiosClient();
         const response = await axiosClient.post('site/login', loginInfo);
         const data = response.data;
         return { username: loginInfo.username, ...data };
@@ -30,6 +31,7 @@ export const loginApi = async (loginInfo: LoginType) => {
 
 export const registerApi = async (userinfo: RegisterType) => {
     try {
+        const axiosClient = getAxiosClient();
         const response = await axiosClient.post('site/register', userinfo);
         const data = response.data;
         return data;
@@ -45,6 +47,7 @@ export const registerApi = async (userinfo: RegisterType) => {
 //TODO: find type of SongParamsType and remove any
 export const songApi = async ({ queryKey, pageParam = 1 }: any) => {
     try {
+        const axiosClient = getAxiosClient();
         const search = queryKey[1];
         const perPage = queryKey[2];
         const params = {
@@ -52,7 +55,6 @@ export const songApi = async ({ queryKey, pageParam = 1 }: any) => {
             'per-page': perPage,
             page: pageParam
         };
-
         const response = await axiosClient.get('song', { params });
         const data = response.data.result;
 
@@ -68,6 +70,7 @@ export const songApi = async ({ queryKey, pageParam = 1 }: any) => {
 
 export const createPlayListApi = async (values: FormData) => {
     try {
+        const axiosClient = getAxiosClient();
         const response = await axiosClient.post('playlist', values);
         const data = response.data;
  
@@ -83,6 +86,7 @@ export const createPlayListApi = async (values: FormData) => {
 
 export const getPlaylistApi = async () => {
     try {
+        const axiosClient = getAxiosClient();
         const response = await axiosClient.get('playlist');
         const data = response.data.result;
 
@@ -98,6 +102,7 @@ export const getPlaylistApi = async () => {
 
 export const deletePlaylistApi = async (playlistId: number) => {
     try {
+        const axiosClient = getAxiosClient();
         await axiosClient.delete('playlist/' + playlistId);
         return { playlistId };
     } catch (e: any) {
@@ -111,6 +116,7 @@ export const deletePlaylistApi = async (playlistId: number) => {
 
 export const putPlayListApi = async (values: FormData, playlistId: number) => {
     try {
+        const axiosClient = getAxiosClient();
         const response = await axiosClient.put('playlist/' + playlistId, values);
         const data = response.data;
 
@@ -126,6 +132,7 @@ export const putPlayListApi = async (values: FormData, playlistId: number) => {
 
 export const patchPlayListApi = async (values: FormData, playlistId: number) => {
     try {
+        const axiosClient = getAxiosClient();
         const response = await axiosClient.patch('playlist/' + playlistId, values);
         const data = response.data;
 
@@ -139,9 +146,10 @@ export const patchPlayListApi = async (values: FormData, playlistId: number) => 
     }
 };
 
-export const addSongApi = async ({ songId, playlistId }: any) => {
+export const addSongApi = async ({ songid, playlistId }: any) => {
     try {
-        const response = await axiosClient.post('playlist/add-song/' + playlistId, { "song_id": +songId });
+        const axiosClient = getAxiosClient();
+        const response = await axiosClient.post('playlist/add-song/' + playlistId, { "song_id": songid });
         const data = response.data.result;
         return data;
     } catch (e: any) {

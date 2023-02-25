@@ -3,7 +3,7 @@ import PlayList from '..';
 import CreatePlayList from './createPlayList';
 import { Tabs, Tab } from 'react-bootstrap';
 
-const PlayListTabs = ( songId: any) => {
+const PlayListTabs = ({ songid }: any) => {
     const [key, setKey] = useState('playList');
     return (
         <Tabs
@@ -15,7 +15,7 @@ const PlayListTabs = ( songId: any) => {
             onSelect={(k: any) => setKey(k)}
         >
             <Tab eventKey="playList" title="PlayList">
-            <PlayList songId={songId}/>
+                <PlayList songid={songid} />
             </Tab>
             <Tab eventKey="createPlayList" title="CreatePlayList">
                 <CreatePlayList />

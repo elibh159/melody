@@ -14,6 +14,6 @@ export interface PlayListType {
 export interface AddToPlayListModalPropsType {
     show: boolean;
     onHide: () => void;
-    songId: string;
+    songid: string;
 }
 
