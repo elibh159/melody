@@ -99,7 +99,9 @@ I used  `Eslint` and `@tanstack/react-query-devtools` in the project.
 # State management
 
 2 type of state management used in the project:
+
     - useContext
+    
     - TanStack _React Query(v4)_
 
 # Preview of the project
