@@ -18,7 +18,7 @@ import "./style/style.scss";
 
 const Login = () => {
   const navigate = useNavigate();
-  const auth = useAuth() as AuthContextType;
+  const auth:AuthContextType = useAuth();
   const [initValues, setInitValues] = useState({
     username: '',
     password: '',

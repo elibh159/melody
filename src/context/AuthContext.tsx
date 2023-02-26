@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext } from "react";
 import { fakeAuthProvider } from "./auth";
 import { AuthContextType } from "../interface/authContextType";
-import { setToken } from '../helpers/auth';
+import { removeToken, setToken } from '../helpers/auth';
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 export const AuthContext = createContext<AuthContextType>(null!);
@@ -25,6 +25,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const signout = (callback: VoidFunction) => {
         return fakeAuthProvider.signout(() => {
             setUser('');
+            removeToken();
             callback();
         });
     };

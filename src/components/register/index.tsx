@@ -21,7 +21,7 @@ import "./style/style.scss";
 
 const Register = () => {
   const { mutate: mutateRegister, isLoading, isSuccess, isError } = useMutation(registerApi);
-  const auth = useAuth() as AuthContextType;
+  const auth:AuthContextType = useAuth();
   const navigate = useNavigate();
   const [initValues, setInitValues] = useState({
     firstname: '',
