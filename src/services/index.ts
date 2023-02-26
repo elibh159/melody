@@ -68,7 +68,7 @@ export const songApi = async ({ queryKey, pageParam = 1 }: any) => {
     }
 };
 
-export const createPlayListApi = async (values: FormData) => {
+export const createPlaylistApi = async (values: FormData) => {
     try {
         const axiosClient = getAxiosClient();
         const response = await axiosClient.post('playlist', values);
@@ -114,7 +114,7 @@ export const deletePlaylistApi = async (playlistId: number) => {
     }
 };
 
-export const putPlayListApi = async (values: FormData, playlistId: number) => {
+export const putPlaylistApi = async (values: FormData, playlistId: number) => {
     try {
         const axiosClient = getAxiosClient();
         const response = await axiosClient.put('playlist/' + playlistId, values);
@@ -130,7 +130,7 @@ export const putPlayListApi = async (values: FormData, playlistId: number) => {
     }
 };
 
-export const patchPlayListApi = async (values: FormData, playlistId: number) => {
+export const patchPlaylistApi = async (values: FormData, playlistId: number) => {
     try {
         const axiosClient = getAxiosClient();
         const response = await axiosClient.patch('playlist/' + playlistId, values);

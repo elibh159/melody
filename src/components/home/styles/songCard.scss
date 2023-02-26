@@ -3,4 +3,7 @@
 .card{
     background: $second-card-bg;
     border: 1px solid $line-color;
+    .p-2{
+        min-width: 8rem;
+    }
 }

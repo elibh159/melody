@@ -1,11 +1,14 @@
 import React, { Suspense } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import Spinner from "../custom/Spinner";
 import routes from "../../routes";
 import RequireAuth from "./RequireAuth";
 import { RoutesType } from "../../interface/routesType";
+import { getPlaylistApi } from "../../services";
 
 const AppContent: () => JSX.Element = () => {
+  useQuery(['playlist'], getPlaylistApi);
   return (
     <div className="container text-center">
       <div className="row">

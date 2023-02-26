@@ -3,15 +3,13 @@ export interface createPlaylistPropsType {
     cover: File;
 }
 
-export interface PlayListType {
+export interface PlaylistType {
     id: number;
     title: string;
-    cover: string;
-    // createAt: string;
-    // updateAt: string;    
+    cover: string;  
 }
 
-export interface AddToPlayListModalPropsType {
+export interface AddToPlaylistModalPropsType {
     show: boolean;
     onHide: () => void;
     songid: string;

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { TextError } from "../../custom/TextError";
 import {
   Button,
   Col,
@@ -11,11 +10,17 @@ import {
   Row,
   Spinner
 } from 'react-bootstrap';
-import { createPlayListApi } from '../../../services';
+import { TextError } from "../custom/TextError";
+import { createPlaylistApi } from '../../services';
 
-const CreatePlayList = () => {
+const CreatePlaylist = () => {
   const queryClient = useQueryClient();
-  const { mutate: mutateCreatePlayList, isLoading, isSuccess, isError, data } = useMutation(createPlayListApi);
+  const { mutate: mutateCreatePlaylist,
+    isLoading,
+    isSuccess,
+    isError,
+    data,
+    error } = useMutation(createPlaylistApi);
   const [title, setTitle] = useState('');
   const [cover, setCover] = useState();
   const handleSubmit = () => {
@@ -24,11 +29,11 @@ const CreatePlayList = () => {
       form.append('cover', cover);
     }
     form.append('title', title);
-    mutateCreatePlayList(form);
+    mutateCreatePlaylist(form);
   };
   useEffect(() => {
     if (isSuccess) {
-      queryClient.setQueryData(['playList'], (oldData: any) => {
+      queryClient.setQueryData(['playlist'], (oldData: any) => {
         oldData.items.push(data.result);
         return oldData;
       });
@@ -64,7 +69,6 @@ const CreatePlayList = () => {
           <Container className="logo-container">
           </Container>
           <h3>Create Playlist</h3>
-          {isLoading && <Spinner color="success" />}
           <InputGroup className="mb-3">
             <div className="input-group">
               <Field
@@ -88,7 +92,6 @@ const CreatePlayList = () => {
               name='cover'
               type='file'
               onChange={handleSelectFile}
-              // value={cover}
               accept='image/*'
               className="form-control"
             />
@@ -110,8 +113,9 @@ const CreatePlayList = () => {
             </Col>
 
             <Col md="6">
-              {(isSuccess) && <p className="text-success"> PlayList created successfuly!</p>}
-              {(isError) && <p className="text-danger"> server error</p>}
+              {(isSuccess) && <p className="text-success"> Playlist created successfuly!</p>}
+              {(isError && error instanceof Error) && <TextError>Error: {error.message}</TextError>}
+              {isLoading && <Spinner color="success" />}
             </Col>
           </Row>
         </Form>
@@ -120,4 +124,4 @@ const CreatePlayList = () => {
   );
 };
 
-export default CreatePlayList;
+export default CreatePlaylist;

@@ -21,7 +21,7 @@ const AppHeader = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <NavLink to="/home">Home</NavLink>
-            <NavLink to="/playList">PlayList</NavLink>
+            <NavLink to="/playlist">Playlist</NavLink>
             <NavLink to="/login">Login</NavLink>
             <NavLink to="/register">Register</NavLink>
 

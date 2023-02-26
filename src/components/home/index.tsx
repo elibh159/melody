@@ -10,6 +10,7 @@ const Home: () => JSX.Element = () => {
     const {
         status: getSongListStatus,
         data: songListData,
+        error,
         isFetching,
         isFetchingNextPage,
         isFetchingPreviousPage,
@@ -33,6 +34,7 @@ const Home: () => JSX.Element = () => {
             setSearch={setSearch} />
         <SongList
             status={getSongListStatus}
+            error={error as Error}
             data={songListData}
             isFetching={isFetching}
             isFetchingNextPage={isFetchingNextPage}

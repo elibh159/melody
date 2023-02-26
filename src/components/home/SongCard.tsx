@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Row, Col, Button, Card } from 'react-bootstrap';
 import { SongCardType } from '../../interface/songType';
-import AddToPlayListModal from '../playList/modal/addToPlayListModal';
+import AddToPlaylistModal from '../playList/addToPlaylistModal';
 import "./styles/songCard.scss";
 
 const SongCard = (songInfo: SongCardType) => {
@@ -36,15 +36,17 @@ const SongCard = (songInfo: SongCardType) => {
                 {songInfo.year}
               </div>
               <div className="p-2">
-                <a href={`${songInfo.file}.${songInfo.format}`} download>download</a>
+                <a className="btn btn-info" href={`${songInfo.file}.${songInfo.format}`} download>download</a>
               </div>
-              <Button variant="primary" className="float-end" onClick={() => setModalShow(true)}>
-                Add to Playlist
-              </Button>
-              <AddToPlayListModal
+              <div className="p-2">
+                <Button variant="primary" onClick={() => setModalShow(true)}>
+                  Add to Playlist
+                </Button>
+              </div>
+              <AddToPlaylistModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
-               songid={songInfo.id}
+                songid={songInfo.id}
               />
             </div>
           </Card.Body>

@@ -29,7 +29,7 @@ export interface SongResoponseType {
 export interface songListPropsType{
     status: string;
     data: InfiniteData<any> | undefined;
-    //error: string;
+    error: Error;
     isFetching: boolean;
     isFetchingNextPage: boolean;
     isFetchingPreviousPage: boolean;

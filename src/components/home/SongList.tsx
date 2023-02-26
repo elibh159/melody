@@ -8,7 +8,7 @@ import { Button, Spinner } from 'react-bootstrap';
 const SongList = ({
     status,
     data,
-    //error,
+    error,
     isFetching,
     isFetchingNextPage,
     hasNextPage,
@@ -27,7 +27,7 @@ const SongList = ({
             {status === 'loading' ? (
                 <Spinner></Spinner>
             ) : status === 'error' ? (
-                <p className="text-danger">Error</p>// {error.message}
+                <p className="text-danger">Error: {error.message}</p>
             ) : (
                 <>
                     {data?.pages.map((page: { items: SongResoponseType[]; }, i: React.Key | null | undefined) => (
