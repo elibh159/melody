@@ -128,34 +128,34 @@ This project have 4 pages:
     
 - **Desktop view**
     
-    - login && Reagistr page
+    - login & Register page
 
-    ![login && Reagistr page](/public/assets/desktop1.png)
+        ![login && Reagistr page](/public/assets/desktop1.png)
 
     - Home page
     
-    ![Home page](/public/assets/desktop2.png)
+        ![Home page](/public/assets/desktop2.png)
 
     - Home page: modal for add song to playlist
 
-    ![Home page: modal for add song to playlist](/public/assets/desktop4.png)
+        ![Home page: modal for add song to playlist](/public/assets/desktop4.png)
 
     - Home page: modal for create new playlist
     
-    ![Home page: modal for create new playlist](/public/assets/desktop5.png)
+        ![Home page: modal for create new playlist](/public/assets/desktop5.png)
 
     - Playlits page: when it is empty!
     
-    ![Playlits page: when it is empty!](/public/assets/desktop6.png)
+        ![Playlits page: when it is empty!](/public/assets/desktop6.png)
     
     - Playlits page
     
-    ![Playlits page](/public/assets/desktop7.png)
+        ![Playlits page](/public/assets/desktop7.png)
     
     - Playlits detail page
     
-    ![Playlits detail page](/public/assets/desktop3.png)
+        ![Playlits detail page](/public/assets/desktop3.png)
 
 - **Mobile view**
 
-    ![App Screenshot](/public/assets/mobile%20preview.pdf)
+        ![App Screenshot](/public/assets/mobile%20preview.png)
