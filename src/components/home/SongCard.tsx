@@ -10,7 +10,7 @@ const SongCard = (songInfo: SongCardType) => {
   return (
     <Row>
       <Col>
-        <Card className="m-1">
+        <Card className="m-2">
           <Card.Body>
             <div className="d-flex flex-row  flex-wrap flex-fill">
 

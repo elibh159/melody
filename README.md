@@ -13,6 +13,14 @@
     6. Style
 
     7. Debugge
+
+    8. Preview of the project
+    
+    9. Screenshot 
+
+        * Mobile view
+        
+        * Desktop view
     
 # Description
 
@@ -108,11 +116,46 @@ I used  `Eslint` and `@tanstack/react-query-devtools` in the project.
 
 This project have 4 pages:
 
-    - LOGIN
-
+    - LOGIN && REGISTER
+    
     - HOME
-
-    - REGISTER
 
     - PLAYLIST
 
+    - PLAYLIST DETAIL
+
+# Screenshot
+    
+- **Desktop view**
+    
+    - login && Reagistr page
+
+    ![login && Reagistr page](/public/assets/desktop1.png)
+
+    - Home page
+    
+    ![Home page](/public/assets/desktop2.png)
+
+    - Home page: modal for add song to playlist
+
+    ![Home page: modal for add song to playlist](/public/assets/desktop4.png)
+
+    - Home page: modal for create new playlist
+    
+    ![Home page: modal for create new playlist](/public/assets/desktop5.png)
+
+    - Playlits page: when it is empty!
+    
+    ![Playlits page: when it is empty!](/public/assets/desktop6.png)
+    
+    - Playlits page
+    
+    ![Playlits page](/public/assets/desktop7.png)
+    
+    - Playlits detail page
+    
+    ![Playlits detail page](/public/assets/desktop3.png)
+
+- **Mobile view**
+
+    ![App Screenshot](/public/assets/mobile%20preview.pdf)

@@ -21,7 +21,7 @@ const AppHeader = () => {
   return (
     <Navbar {...args} >
       <Container fluid>
-        <Navbar.Brand href="/">🎸</Navbar.Brand>
+        <Navbar.Brand href="/">🎶Melody🎶</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

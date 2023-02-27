@@ -5,12 +5,14 @@ import Login from "../components/login";
 
 const AuthLayout: () => JSX.Element = () => {
   return (
-    <Container fluid className='text-center'>
-      <Row className='justify-content-center align-items-center m-5'>
-        <Col md={6}>
+    <Container fluid className='text-center p-3'>
+      <h1>🎶Melody🎶</h1>
+      <hr/>
+      <Row className='justify-content-center align-items-center m-4 '>
+        <Col md={6} className="order-2">
           <Register />
         </Col>
-        <Col md={6}>
+        <Col md={6} className="order-1">
           <Login />
         </Col>
       </Row>

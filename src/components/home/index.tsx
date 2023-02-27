@@ -3,6 +3,7 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { songApi } from '../../services';
 import SearchBar from './SearchBar';
 import SongList from './SongList';
+import { Container } from 'react-bootstrap';
 
 const Home: () => JSX.Element = () => {
     const [search, setSearch] = useState("");
@@ -28,7 +29,7 @@ const Home: () => JSX.Element = () => {
 
 
 
-    return (<div>
+    return (<Container className="p-3">
         <SearchBar
             search={search}
             setSearch={setSearch} />
@@ -44,7 +45,7 @@ const Home: () => JSX.Element = () => {
             hasPreviousPage={hasPreviousPage}
             fetchNextPage={fetchNextPage}
         />
-    </div>)
+    </Container>)
 }
 
 export default Home;

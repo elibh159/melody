@@ -38,7 +38,7 @@ const DeletePlaylist = ({ playlistId }: any) => {
             {(isError && error instanceof Error) && <TextError>Error: {error.message}</TextError>}
             <Button
                 onClick={() => deletePlaylist()}
-                className="btn btn-danger m-1">
+                className="btn btn-danger">
                 Delete playlist
             </Button>
 

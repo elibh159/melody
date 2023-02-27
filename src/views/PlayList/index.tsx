@@ -5,7 +5,7 @@ import Playlist from "../../components/playList";
 const PlaylistView = () => {
     return (<div className="p-3">
         <Card>
-            <h1 className='p-5'>Playlist</h1>
+            <h1 className='p-3'>Playlist</h1>
         </Card>
         <Playlist />
     </div>)

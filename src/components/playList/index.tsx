@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 import { Button, Card, Col, Container, Row, Spinner } from 'react-bootstrap';
 import CreatePlaylist from './createPlaylist';
 import DeletePlaylist from './deletePlaylist';
@@ -73,14 +72,14 @@ const Playlist = ({ songid }: any = { songid: undefined }) => {
                         {songid &&
                             <Button
                                 onClick={() => addSongToPlaylist(id)}
-                                className="btn btn-success ms-auto m-1" >
-                                ➕ Add to playlist
+                                className="btn btn-success ms-auto" >
+                                Add to playlist
                             </Button>}
-                        <DeletePlaylist playlistId={id} />
+                        {!songid &&
+                            <DeletePlaylist playlistId={id} />}
                     </li>
                 ))}
             </ul>
-            <ReactQueryDevtools initialIsOpen={false} />
         </Container>
     )
 }

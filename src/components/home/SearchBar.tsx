@@ -7,7 +7,7 @@ import { SearchBarPropsType } from '../../interface/songType';
 
 const SearchBar = ({ search, setSearch }: SearchBarPropsType) => {
   return (
-    <Row className="justify-content-center m-5">
+    <Row className="justify-content-center m-3">
       <Col lg={6} md={6}>
         <h3>Search</h3>
         <div className="input-group">
