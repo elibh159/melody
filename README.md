@@ -158,4 +158,4 @@ This project have 4 pages:
 
 - **Mobile view**
 
-        ![App Screenshot](/public/assets/mobile.png)
+    ![Mobile view](/public/assets/mobile.png)
